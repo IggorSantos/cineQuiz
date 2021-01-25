@@ -33,7 +33,7 @@ export default function Home() {
           <h1>CineQuiz</h1>
         </Widget.Header>
         <Widget.Content>
-          <p>bla bla bla bla bla bla</p>
+          <p>Um quiz sobre cinema</p>
         </Widget.Content>
        </Widget>
        <Widget>
