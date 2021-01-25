@@ -44,10 +44,9 @@ export default function Home() {
         </Widget.Header>
         <Widget.Content>
           <p>Um quiz sobre cinema</p>
-          <Input/>
           <Button>
-           <Link href="/quiz">
-            <a>Jogar</a>
+           <Link href="/">
+             Voltar
            </Link>
           </Button>
         </Widget.Content>
@@ -55,7 +54,7 @@ export default function Home() {
        <Widget>
         <Widget.Content>
          <h1>Quizes da galera</h1>
-         <p>Em construção</p>
+         <p>bla bla bla bla bla bla</p>
         </Widget.Content>
        </Widget>
        <Footer />
