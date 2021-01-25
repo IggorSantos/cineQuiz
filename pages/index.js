@@ -34,7 +34,6 @@ export default function Home() {
         </Widget.Header>
         <Widget.Content>
           <p>Um quiz sobre cinema</p>
-          <p>Um quiz sobre cinema</p>
         </Widget.Content>
        </Widget>
        <Widget>
