@@ -4,14 +4,9 @@ import Widget from '../src/components/widget'
 import Footer from '../src/components/footer'
 import GitHubCorner from '../src/components/githubCorner'
 import QuizBackground from '../src/components/quizBackground'
+import QuizLogo from '../src/components/quizLogo'
 import Link from 'next/link'
-
-/*const Background = styled.div`
-   background-image: url(${db.bg});
-   flex:1;
-   background-size:cover;
-   background-position:center;
-`*/
+import Head from 'next/head'
 
 export const QuizContainer = styled.div`
    width: 100%;
@@ -37,7 +32,11 @@ const Input = styled.input`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
-     <QuizContainer>
+    <Head>
+     <title>CineQuiz</title>
+    </Head>
+    <QuizContainer>
+     <QuizLogo />
        <Widget>
         <Widget.Header>
           <h1>CineQuiz</h1>
