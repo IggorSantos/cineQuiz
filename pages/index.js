@@ -5,6 +5,8 @@ import Footer from '../src/components/footer'
 import GitHubCorner from '../src/components/githubCorner'
 import QuizBackground from '../src/components/quizBackground'
 import QuizLogo from '../src/components/quizLogo'
+import Input from '../src/components/input'
+import Button from '../src/components/button'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 
@@ -41,16 +43,17 @@ export default function Home() {
         }}
         >
         <p>Um quiz sobre cinema</p>
-        <input
+        <Input
           onChange={function(event){
           setName(event.target.value)
         }}
         placeholder="Digite seu nome"
+        value={name}
         />
-        <button type="submit" disabled={name.length === 0}>
+        <Button type="submit" disabled={name.length === 0}>
            Jogar
-           {name}
-        </button>
+           [{name}]
+        </Button>
         </form>
         </Widget.Content>
        </Widget>

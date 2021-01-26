@@ -4,6 +4,7 @@ import Widget from '../src/components/widget'
 import Footer from '../src/components/footer'
 import GitHubCorner from '../src/components/githubCorner'
 import QuizBackground from '../src/components/quizBackground'
+import QuizLogo from '../src/components/quizLogo'
 import Link from 'next/link'
 
 /*const Background = styled.div`
@@ -38,6 +39,7 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
      <QuizContainer>
+      <QuizLogo />
        <Widget>
         <Widget.Header>
           <h1>CineQuiz</h1>
