@@ -5,8 +5,8 @@ import Footer from '../src/components/footer'
 import GitHubCorner from '../src/components/githubCorner'
 import QuizBackground from '../src/components/quizBackground'
 import QuizLogo from '../src/components/quizLogo'
-import Link from 'next/link'
 import Head from 'next/head'
+import {useRouter} from 'next/router'
 
 export const QuizContainer = styled.div`
    width: 100%;
@@ -18,23 +18,15 @@ export const QuizContainer = styled.div`
      padding: 15px;
    }
 `
-const Button = styled.button`
-   width:200px;
-   height:30px;
-   background-color: ${({ theme }) => theme.colors.primary};;
-   margin-top:20px;
-`
-const Input = styled.input`
-   width:200px;
-   height:30px;
- `
 
 export default function Home() {
+  const router = useRouter()
+  const [name,setName] = React.useState('')
   return (
     <QuizBackground backgroundImage={db.bg}>
     <Head>
      <title>CineQuiz</title>
-     <meta property="og:image" content="https://somos.lojaiplace.com.br/wp-content/uploads/2020/01/cinema-CRED-iStock_Roman-Valiev-1068x712.jpg">
+     <meta property="og:image" content="https://somos.lojaiplace.com.br/wp-content/uploads/2020/01/cinema-CRED-iStock_Roman-Valiev-1068x712.jpg" />
     </Head>
     <QuizContainer>
      <QuizLogo />
@@ -43,13 +35,23 @@ export default function Home() {
           <h1>CineQuiz</h1>
         </Widget.Header>
         <Widget.Content>
-          <p>Um quiz sobre cinema</p>
-          <Input/>
-          <Button>
-           <Link href="/quiz">
-            <a>Jogar</a>
-           </Link>
-          </Button>
+        <form onSubmit={function(event){
+          event.preventDefault()
+          router.push(`/quiz?name=${name}`)
+        }}
+        >
+        <p>Um quiz sobre cinema</p>
+        <input
+          onChange={function(event){
+          setName(event.target.value)
+        }}
+        placeholder="Digite seu nome"
+        />
+        <button type="submit" disabled={name.length === 0}>
+           Jogar
+           {name}
+        </button>
+        </form>
         </Widget.Content>
        </Widget>
        <Widget>
