@@ -34,6 +34,7 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
     <Head>
      <title>CineQuiz</title>
+     <meta property="og:image" content="https://somos.lojaiplace.com.br/wp-content/uploads/2020/01/cinema-CRED-iStock_Roman-Valiev-1068x712.jpg">
     </Head>
     <QuizContainer>
      <QuizLogo />
