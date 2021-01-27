@@ -9,10 +9,10 @@
       "description": "Essa é pra aquecer",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "lala",
+        "bla bla",
+        "le le",
+        "cro cro"
       ]
     },
     {
