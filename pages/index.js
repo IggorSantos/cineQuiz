@@ -20,6 +20,9 @@ export const QuizContainer = styled.div`
      padding: 15px;
    }
 `
+const QuizTitle = styled.h1`
+   color:black;
+`
 
 export default function Home() {
   const router = useRouter()
@@ -28,13 +31,15 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
     <Head>
      <title>CineQuiz</title>
-     <meta property="og:image" content="https://somos.lojaiplace.com.br/wp-content/uploads/2020/01/cinema-CRED-iStock_Roman-Valiev-1068x712.jpg" />
+     <meta key="og:image" name="og:image" content={db.bg} />
     </Head>
     <QuizContainer>
      <QuizLogo />
        <Widget>
         <Widget.Header>
-          <h1>CineQuiz</h1>
+          <QuizTitle>
+           CineQuiz
+          </QuizTitle>
         </Widget.Header>
         <Widget.Content>
         <form onSubmit={function(event){
