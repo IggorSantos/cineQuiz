@@ -5,21 +5,12 @@ import Footer from '../src/components/footer'
 import GitHubCorner from '../src/components/githubCorner'
 import QuizBackground from '../src/components/quizBackground'
 import QuizLogo from '../src/components/quizLogo'
+import QuizContainer from '../src/components/quizContainer'
 import Input from '../src/components/input'
 import Button from '../src/components/button'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 
-export const QuizContainer = styled.div`
-   width: 100%;
-   max-width: 350px;
-   padding-top: 45px;
-   margin: auto 10%;
-   @media screen and (max-width: 500px) {
-     margin: auto;
-     padding: 15px;
-   }
-`
 const QuizTitle = styled.h1`
    color:black;
 `
@@ -49,15 +40,13 @@ export default function Home() {
         >
         <p>Um quiz sobre cinema</p>
         <Input
-          onChange={function(event){
-          setName(event.target.value)
-        }}
-        placeholder="Digite seu nome"
-        value={name}
+          onChange={(event) => setName(event.target.value)}
+          placeholder="Digite seu nome"
+          value={name}
+          name="nomedoJogador"
         />
         <Button type="submit" disabled={name.length === 0}>
-           Jogar
-           [{name}]
+           {`Jogar ${name}`}
         </Button>
         </form>
         </Widget.Content>

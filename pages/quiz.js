@@ -5,60 +5,62 @@ import Footer from '../src/components/footer'
 import GitHubCorner from '../src/components/githubCorner'
 import QuizBackground from '../src/components/quizBackground'
 import QuizLogo from '../src/components/quizLogo'
+import QuizContainer from '../src/components/quizContainer'
+import Input from '../src/components/input'
+import Button from '../src/components/button'
 import Link from 'next/link'
 
-/*const Background = styled.div`
-   background-image: url(${db.bg});
-   flex:1;
-   background-size:cover;
-   background-position:center;
-`*/
+function LoadingWidget() {
+  return (
+    <Widget>
+      <Widget.Header>
+        Carregando...
+      </Widget.Header>
 
-export const QuizContainer = styled.div`
-   width: 100%;
-   max-width: 350px;
-   padding-top: 45px;
-   margin: auto 10%;
-   @media screen and (max-width: 500px) {
-     margin: auto;
-     padding: 15px;
-   }
-`
-const Button = styled.button`
-   width:200px;
-   height:30px;
-   background-color: ${({ theme }) => theme.colors.primary};;
-   margin-top:20px;
-`
-const Input = styled.input`
-   width:200px;
-   height:30px;
- `
+      <Widget.Content>
+        [Desafio do Loading]
+      </Widget.Content>
+    </Widget>
+  );
+}
 
 export default function Home() {
+  console.log(db.questions)
   return (
     <QuizBackground backgroundImage={db.bg}>
      <QuizContainer>
       <QuizLogo />
        <Widget>
         <Widget.Header>
-          <h1>CineQuiz</h1>
+          <h3>
+           Pergunta
+           1
+           de
+           {`${db.questions.length}`}
+           </h3>
         </Widget.Header>
+        <img
+         alt="Descrição"
+         style={{
+          width: '100%',
+          height: '150px',
+          objectFit: 'cover',
+         }}
+         src="https://placehold.it/400x400"
+        />
         <Widget.Content>
-          <p>Um quiz sobre cinema</p>
+          <h2>
+           Titulo
+          </h2>
+          <p>
+           Descrição
+          </p>
           <Button>
-           <Link href="/">
-             Voltar
-           </Link>
+           Confirmar
           </Button>
         </Widget.Content>
        </Widget>
-       <Widget>
-        <Widget.Content>
-         <h1>Quizes da galera</h1>
-         <p>bla bla bla bla bla bla</p>
-        </Widget.Content>
-       </Widget>
+       <LoadingWidget />
        <Footer />
      </QuizContainer>
     <GitHubCorner projectUrl={"https://github.com/IggorSantos"} />

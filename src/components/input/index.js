@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const StyledInput = styled.input`
   width:100%;
@@ -6,8 +7,21 @@ const StyledInput = styled.input`
   display:block;
 `
 
-export default function Input(props){
+export default function Input({ onChange,placeholder, ...props }){
   return(
-    <StyledInput {...props} />
+    <div>
+     <StyledInput
+       onChange={onChange}
+       placeholder={placeholder}
+      {...props} 
+     />
+    </div>
   )
 }
+
+Input.propTypes = {
+  onChange: PropTypes.func.IsRequired,
+  placeholder: PropTypes.string.IsRequired,
+  name: PropTypes.string.IsRequired,
+  value: PropTypes.string.IsRequired,
+};
