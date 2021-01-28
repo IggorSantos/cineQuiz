@@ -28,6 +28,7 @@ function QuestionWidget({
   question,
   totalQuestions,
   questionIndex,
+  onSubmit,
  }) {
   const questionId = `question__${questionIndex}`
   return(
@@ -53,7 +54,12 @@ function QuestionWidget({
        <p>
         {question.description}
        </p>
-       <form>
+       <form
+         onSubmit={(event) => {
+           event.preventDefault()
+           onSubmit()
+         }}
+       >
         {question.alternatives.map((alternative, alternativeIndex) => {
           const alternativeId = `alternative__${alternativeIndex}`
           return(
@@ -80,20 +86,48 @@ function QuestionWidget({
   )
 }
 
+const screenStates = {
+  QUIZ: 'QUIZ',
+  LOADING: 'LOADING',
+  RESULT: 'RESULT',
+}
 export default function Home() {
+  const [screenState,setScreenState] = React.useState(screenStates.LOADING)
   const totalQuestions = db.questions.length
-  const questionIndex = 0
+  const [currentQuestion,setCurrentQuestion] = React.useState(0)
+  const questionIndex = currentQuestion;
   const question = db.questions[questionIndex]
+
+  React.useEffect( () => {
+    setTimeout(() => {
+      setScreenState(screenStates.QUIZ)
+    }, 1 * 1000)
+  }, [])
+
+  function handleSubmit(){
+    const nextQuestion = questionIndex + 1
+    if(nextQuestion < totalQuestions){
+      setCurrentQuestion(questionIndex + 1)
+    }else{
+      setScreenState(screenStates.RESULT)
+    }
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg}>
      <QuizContainer>
       <QuizLogo />
-       <QuestionWidget
+       {screenState === screenStates.QUIZ && (
+         <QuestionWidget
           question={question}
           questionIndex={questionIndex}
           totalQuestions={totalQuestions}
+          onSubmit={handleSubmit}
         />
-       <LoadingWidget />
+      )}
+       {screenState === screenStates.LOADING && <LoadingWidget />}
+
+       {screenState === screenStates.RESULT && <div>Você acertou x questões</div>}
        <Footer />
      </QuizContainer>
     <GitHubCorner projectUrl={"https://github.com/IggorSantos"} />
