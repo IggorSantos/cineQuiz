@@ -4,25 +4,27 @@
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "https://s4.static.brasilescola.uol.com.br/be/2020/01/estatueta-oscar.jpg",
+      "title": "Qual a maior quantidade de Oscars que um filme já ganhou?",
       "description": "Essa é pra aquecer",
       "answer": 2,
       "alternatives": [
-        "lala",
-        "bla bla",
-        "le le",
-        "cro cro"
+        "9",
+        "11",
+        "10",
+        "6"
       ]
     },
     {
       "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
+      "title": "Quais filmes são os maiores ganhadores?",
       "description": "Faz tempo em haha",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "BenHur, E o Vento Levou, Dançando na chuva",
+         "Senhor dos Aneis, Poderoso Chefão, Psicose",
+         "BenHur, E o Vento Levou, Asas",
+         "BenHur,Senhor dos aneis,Titanic"
       ]
     }
   ],
