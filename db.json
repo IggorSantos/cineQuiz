@@ -6,8 +6,8 @@
     {
       "image": "https://s4.static.brasilescola.uol.com.br/be/2020/01/estatueta-oscar.jpg",
       "title": "Qual a maior quantidade de Oscars que um filme já ganhou?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
+      "description": "Já vamos comecar assim",
+      "answer": 1,
       "alternatives": [
         "9",
         "11",
@@ -16,15 +16,27 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "image": "https://www.dw.com/image/47289947_401.jpg",
       "title": "Quais filmes são os maiores ganhadores?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "description": "Complementando a pergunta anterior",
+      "answer": 3,
       "alternatives": [
          "BenHur, E o Vento Levou, Dançando na chuva",
          "Senhor dos Aneis, Poderoso Chefão, Psicose",
          "BenHur, E o Vento Levou, Asas",
          "BenHur,Senhor dos aneis,Titanic"
+      ]
+    },
+    {
+      "image": "https://www.cantodosclassicos.com/wp-content/uploads/2018/10/03102018-cinema-novo-brasileiro-capa.jpg",
+      "title": "Qual é o diretor baiano conhecido por ser um dos grandes nomes do cinema novo?",
+      "description": "Saindo do cinema de Hollywood",
+      "answer": 0,
+      "alternatives": [
+         "Glauber Rocha",
+         "José Mojica",
+         "José Padilha",
+         "Rogerio Sganzerla"
       ]
     }
   ],
