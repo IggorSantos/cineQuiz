@@ -34,7 +34,7 @@ function ResultWidget({ results }) {
           </p>
         <ul>
         {results.map((result,index) => (
-          <li>
+          <li key={`result__${result}`}>
            #{index + 1} Resultado:
            {result === true ? 'Acertou' : 'Errou'}
           </li>
@@ -65,6 +65,7 @@ function QuestionWidget({
   totalQuestions,
   questionIndex,
   onSubmit,
+  addResult,
  }) {
   const questionId = `question__${questionIndex}`
   const [selectedAlternative,setSelectedAlternative] = React.useState(undefined)
@@ -100,6 +101,7 @@ function QuestionWidget({
            event.preventDefault()
            setIsQuestionSubmited(true)
            setTimeout(() => {
+             addResult(isCorrect)
              onSubmit()
              setIsQuestionSubmited(false)
              setSelectedAlternative(undefined)
@@ -143,16 +145,23 @@ const screenStates = {
   RESULT: 'RESULT',
 }
 export default function Home() {
-  const [screenState,setScreenState] = React.useState(screenStates.RESULT)
-  const [results,setResults] = React.useState([true,false,true])
+  const [screenState,setScreenState] = React.useState(screenStates.LOADING)
+  const [results,setResults] = React.useState([])
   const totalQuestions = db.questions.length
   const [currentQuestion,setCurrentQuestion] = React.useState(0)
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex]
 
+  function addResult(result){
+    setResults([
+      ...results,
+      result,
+    ])
+  }
+
   React.useEffect( () => {
     setTimeout(() => {
-      //setScreenState(screenStates.QUIZ)
+      setScreenState(screenStates.QUIZ)
     }, 1 * 1000)
   }, [])
 
@@ -175,6 +184,7 @@ export default function Home() {
           questionIndex={questionIndex}
           totalQuestions={totalQuestions}
           onSubmit={handleSubmit}
+          addResult={addResult}
         />
       )}
        {screenState === screenStates.LOADING && <LoadingWidget />}
