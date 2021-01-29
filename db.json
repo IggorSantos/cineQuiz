@@ -41,7 +41,7 @@
     }
   ],
   "external": [
-    ""
+    "https://breaking-bad-quiz.eliasnepo.vercel.app/"
   ],
   "theme": {
     "colors": {
