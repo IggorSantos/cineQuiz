@@ -41,7 +41,8 @@
     }
   ],
   "external": [
-    "https://breaking-bad-quiz.eliasnepo.vercel.app/"
+    "https://breaking-bad-quiz.eliasnepo.vercel.app/",
+    "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
   ],
   "theme": {
     "colors": {

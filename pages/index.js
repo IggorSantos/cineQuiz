@@ -8,6 +8,7 @@ import QuizLogo from '../src/components/quizLogo'
 import QuizContainer from '../src/components/quizContainer'
 import Input from '../src/components/input'
 import Button from '../src/components/button'
+import Link from '../src/components/Link'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 
@@ -63,7 +64,7 @@ export default function Home() {
                   .split('.');
             return(
               <li key={linkExterno}>
-               <Widget.Topic href={linkExterno}>
+               <Widget.Topic as={Link} href={`/quiz/${projectName}___${githubUser}`}>
                  {`${githubUser}/${projectName}`}
                </Widget.Topic>
               </li>

@@ -9,6 +9,7 @@ import QuizContainer from '../../components/quizContainer'
 import Input from '../../components/input'
 import Button from '../../components/button'
 import AlternativesForm from '../../components/alternativesForm'
+import BackLinkArrow from '../../components/backLinkArrow'
 import Link from 'next/link'
 
 function ResultWidget({ results }) {
@@ -77,6 +78,7 @@ function QuestionWidget({
   return(
     <Widget>
      <Widget.Header>
+     <BackLinkArrow href="/"/>
        <h3>
         {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
@@ -149,13 +151,14 @@ const screenStates = {
   LOADING: 'LOADING',
   RESULT: 'RESULT',
 }
-export default function Home() {
+export default function Home({ externalQuestions,externalBg }) {
   const [screenState,setScreenState] = React.useState(screenStates.LOADING)
   const [results,setResults] = React.useState([])
-  const totalQuestions = db.questions.length
+  const totalQuestions = externalQuestions.length
   const [currentQuestion,setCurrentQuestion] = React.useState(0)
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex]
+  const question = externalQuestions[questionIndex]
+  const bg = externalBg
 
   function addResult(result){
     setResults([
@@ -180,7 +183,7 @@ export default function Home() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={bg}>
      <QuizContainer>
       <QuizLogo />
        {screenState === screenStates.QUIZ && (
