@@ -38,6 +38,18 @@
          "José Padilha",
          "Rogerio Sganzerla"
       ]
+    },
+    {
+      "image": "https://cdn.falauniversidades.com.br/wp-content/uploads/2020/08/10155210/Nouvelle-Vague-Francesa-1.jpg",
+      "title": "Qual o movimento cinematografico que se originou na França encabeçado por criticos de cinema?",
+      "description": "Continuando fora de Hollywood",
+      "answer": 2,
+      "alternatives": [
+         "Neorrealismo",
+         "Surrealismo",
+         "Nouvelle vague",
+         "Impressionismo"
+      ]
     }
   ],
   "external": [
