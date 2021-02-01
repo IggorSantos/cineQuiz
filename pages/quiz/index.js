@@ -55,7 +55,15 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content>
-        [Desafio do Loading]
+      <img
+       alt="Descrição"
+       style={{
+        width: '100%',
+        height: '150px',
+        objectFit: 'cover',
+       }}
+       src="https://thumbs.gfycat.com/EqualAdvancedKilldeer-size_restricted.gif"
+      />
       </Widget.Content>
     </Widget>
   );
