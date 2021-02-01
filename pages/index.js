@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import db from '../db.json'
+import { motion } from 'framer-motion'
 import Widget from '../src/components/Widget'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GithubCorner'
@@ -27,7 +28,16 @@ export default function Home() {
     </Head>
     <QuizContainer>
      <QuizLogo />
-       <Widget>
+       <Widget
+         as={motion.section}
+         transition={{ delay:0, duration:0.5}}
+         variants={{
+           show:{ opacity: 1, y: '0'},
+           hidden:{ opacity: 0, y: '100%'},
+         }}
+         initial="hidden"
+         animate="show"
+        >
         <Widget.Header>
           <QuizTitle>
            CineQuiz
@@ -52,7 +62,15 @@ export default function Home() {
         </form>
         </Widget.Content>
        </Widget>
-       <Widget>
+       <Widget
+        as={motion.section}
+        transition={{ delay: 0.5, duration: 0.5}}
+        variants={{
+         show:{ opacity: 1},
+         hidden:{ opacity: 0},
+        }}
+        initial="hidden"
+        animate="show">
         <Widget.Content>
          <h1>Quizes da galera</h1>
          <ul>
@@ -73,7 +91,14 @@ export default function Home() {
         </ul>
         </Widget.Content>
        </Widget>
-       <Footer />
+       <Footer  as={motion.footer}
+        transition={{ delay:0, duration:0.5}}
+        variants={{
+          show:{ opacity: 1, y: '0'},
+          hidden:{ opacity: 0, y: '100%'},
+        }}
+        initial="hidden"
+        animate="show"/>
      </QuizContainer>
     <GitHubCorner projectUrl={"https://github.com/IggorSantos"} />
   </QuizBackground>
